@@ -1,0 +1,31 @@
+﻿
+@{
+    var data = TempData["myData"] as WebApplication9.Models.Customer;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table style="font-family:Arial">
+            <tr>
+                <td>CustomerID:</td>
+                <td>@data.CustomerId</td>
+            </tr>
+            <tr>
+                <td>CustomerName:</td>
+                <td>@data.CustomerName</td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>@data.Country</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

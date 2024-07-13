@@ -1,0 +1,53 @@
+﻿@model IEnumerable<curd.Models.employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.company)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.company)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=item.userid }) |
+                @Html.ActionLink("Details", "Details", new {id=item.userid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.userid})
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

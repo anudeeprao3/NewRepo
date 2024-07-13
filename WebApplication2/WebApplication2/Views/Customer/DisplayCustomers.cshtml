@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayCustomers</title>
+</head>
+<body>
+    @Html.Partial("_Header")
+    <div>
+
+        @model List<WebApplication2.Models.Customer>
+
+        @*Write this code under the <div> tag:*@
+        <h2>Customer Details</h2>
+        @foreach (WebApplication2.Models.Customer customer in Model)
+         {
+            Html.RenderPartial("_CustomerView", customer);
+         }
+    </div>
+</body>
+</html>

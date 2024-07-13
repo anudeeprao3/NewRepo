@@ -1,0 +1,23 @@
+﻿@model WebApplication2.Models.employee
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post)) 
+    {
+        @Html.Label("enter employee number")
+        @Html.TextBoxFor(Model=>Model.id)
+        <br/>
+        <br/>
+        @Html.Label("enter employee name")
+        @Html.TextBoxFor(model=>model.name)
+        <br/>
+        <br/>
+        <div>
+        @Html.Label("gender")
+        <input type="radio" value="male" name="gender" id="gender" />male
+        <input type="radio" value="female" name="gender" id="gender" />female 
+        </div>
+        <br />
+        @Html.Label("enter email")
+        @Html.TextBoxFor(Model=>Model.email)
+        <br />
+        <br />
+        <input type="submit" value="register" />
+    }

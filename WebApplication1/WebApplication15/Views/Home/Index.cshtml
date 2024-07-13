@@ -1,0 +1,42 @@
+﻿@model WebApplication15.Models.Employee
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("enter employee number")
+    @Html.TextBoxFor(Model => Model.EmployeeId)
+    <br />
+    <br />
+    @Html.Label("enter employee name")
+    @Html.TextBoxFor(Model => Model.EmployeeName)
+    <br />
+    <br />
+    @Html.Label("enter employee dept")
+
+    //we are using manual values to drop down that is the reason instead of dropdownlistfor we are using dropdown list
+
+    @Html.DropDownList("dept", TempData["depertmentValues"]as List<SelectListItem>)
+    <br />
+    <br />
+    @Html.Label("select Hobby")
+    foreach (string item in TempData["hobbiesValues"] as List<string>)
+    {
+        @Html.CheckBox(item)@item
+    }
+    <br />
+    <br />
+    <div>
+        @Html.Label("select gender")
+        <input type="radio" name="Gender" value="Male" />Male
+        <input type="radio" name="Gender" value="FeMale" />FeMale
+    </div>
+    <br />
+    <br />
+    @Html.Label("enter salary")
+    @Html.TextBoxFor(Model => Model.salary)
+    <br />
+    <input type="submit" value="Register" />
+    <br />
+    <br />
+    @ViewBag.message
+}
+

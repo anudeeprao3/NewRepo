@@ -1,0 +1,19 @@
+﻿@model WebApplication20.Models.Feedback
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Title")
+    @Html.TextBoxFor(Model => Model.Title)
+    <br />
+    <br />
+    @Html.Label("comment")
+    @Html.TextAreaFor(Model => Model.Comment, 4, 40, null)
+    //@Html.MathCaptcha()
+    @Html.Captcha(10)
+    <input type="submit" value="send" />
+    <br />
+    <br />
+    <p class="error">@ViewBag.Errmessage</p>
+}

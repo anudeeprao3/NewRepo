@@ -1,0 +1,24 @@
+﻿@model WebApplication17.Models.Employee
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("enter employee number")
+    @Html.TextBoxFor(Model => Model.EmployeeId)
+    <br />
+    <br />
+    @Html.Label("enter employee name")
+    @Html.TextBoxFor(Model => Model.EmployeeName)
+    <br />
+    <br />
+    @Html.Label("select Hobby")
+
+    foreach(var employee in(IEnumerable<WebApplication17.Models.Employee.hobbies>)
+        TempData["hobbiesValues"])
+                {
+                    @Html.CheckBox(employee.HobbiesValue)@employee.HobbiesValue
+                }
+    <br />
+    <br />
+    <input type="submit" value="Register" />
+}

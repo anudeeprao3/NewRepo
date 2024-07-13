@@ -1,0 +1,25 @@
+﻿@model WebApplication19.Models.Employee
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("enter employee id")
+    @Html.TextBoxFor(Model => Model.Id)
+    @Html.ValidationMessageFor(Model => Model.Id)
+    <br />
+    <br />
+    @Html.Label("enter employee Name")
+    @Html.TextBoxFor(Model => Model.Name)
+    @Html.ValidationMessageFor(Model => Model.Name)
+    <br />
+    <br />
+    @Html.Label("enter employee userName")
+    @Html.TextBoxFor(Model => Model.UserName)
+    @Html.ValidationMessageFor(Model => Model.UserName)
+    <br />
+    <br />
+    @Html.Label("enter employee Email")
+    @Html.TextBoxFor(Model => Model.Email)
+    @Html.ValidationMessageFor(Model => Model.Email)
+    <br />
+    <br />
+    <input type="submit" id="btnsubmit" value="Register" />
+}

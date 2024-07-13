@@ -1,0 +1,24 @@
+﻿
+@{
+    var CustomerData = (IEnumerable<WebApplication10.Models.Customer>)TempData["MyData"];
+}
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>@Html.Label("ID")</th>
+            <th>@Html.DisplayName("Name")</th>
+            <th>@Html.DisplayName("Country")</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in CustomerData)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.CustomerName</td>
+                <td>@customer.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>

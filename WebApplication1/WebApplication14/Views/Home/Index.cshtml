@@ -1,0 +1,59 @@
+﻿@model WebApplication14.Models.Employee
+@{
+    List<SelectListItem> cities = new List<SelectListItem>()
+{
+        new SelectListItem()
+        {
+            Text="Hyderabad",
+            Value="Hyderabad"
+        },
+        new SelectListItem()
+        {
+            Text="chennai",
+            Value="chennai"
+        },
+        new SelectListItem()
+        {
+            Text="Bhubaneshwar",
+            Value="Bhubaneshwar"
+        },
+        new SelectListItem()
+        {
+            Text="Banglore",
+            Value="Banglore"
+        },
+    };
+}
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("Enter employee id")
+    @Html.TextBoxFor(Model => Model.Id)
+    <br />
+    <br />
+    @Html.Label("Enter employee Name")
+    @Html.TextBoxFor(Model => Model.Name)
+    <br />
+    <br />
+    @Html.Label("Enter city")
+    @Html.DropDownListFor(Model => Model.City,cities,"select city")
+    <br />
+    <br />
+    <div>
+        @Html.Label("select gender")
+        <input type="radio" name="Gender" value="Male" />Male
+        <input type="radio" name="Gender" value="FeMale" />FeMale
+        </div>
+        <br />
+        <br />
+        <div>
+            @Html.Label("select course")
+            @Html.CheckBox("csharp", false)c#
+            @Html.CheckBox("java", false)java
+            @Html.CheckBox("php", false)PHP
+        </div>
+        <input  type="submit" value="Register"/>
+        <br />
+        <br />
+        @ViewBag.Message
+        }
+

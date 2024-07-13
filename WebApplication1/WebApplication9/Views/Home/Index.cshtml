@@ -1,0 +1,23 @@
+﻿
+@{
+    var employee = ViewData["msg"] as WebApplication.Models.employee;
+}
+
+<html>
+<body>
+    <table style="font-family:Arial">
+        <tr>
+            <td>user id:</td>
+            <td>@employee.userId </td>
+        </tr>
+        <tr>
+            <td>user Name:</td>
+            <td>@employee.userName</td>
+        </tr>
+        <tr>
+            <td>company:</td>
+            <td>@employee.Company</td>
+        </tr>
+    </table>
+</body>
+</html>

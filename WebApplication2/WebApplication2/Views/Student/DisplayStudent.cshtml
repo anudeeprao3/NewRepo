@@ -1,0 +1,35 @@
+﻿@model WebApplication2.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayStudent</title>
+</head>
+<body>
+    @{
+        String strHeader = Html.Partial("_Header").ToString();
+        strHeader = strHeader.Replace("150", "200");
+        strHeader = strHeader.Replace("azure", "pink");
+        MvcHtmlString htmlString = new MvcHtmlString(strHeader);
+        @htmlString
+    }
+    <div>
+        @*Write this code under the <div> tag:*@
+        <h4>Student Details</h4>
+        <ul>
+            <li>Student Id: @Model.Sid</li>
+            <li>Student Name: @Model.Name</li>
+            <li>Student Class: @Model.Class</li>
+            <li>Student Gender: @Model.Gender</li>
+            <li>Student Fees: @Model.Fees</li>
+            <li>Student Address: @Model.Address</li>
+        </ul>
+    </div>
+</body>
+</html>
